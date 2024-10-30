@@ -1,0 +1,188 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Prompt", sans-serif;
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+}
+h1,
+h3 {
+  font-family: "Gravitas One", serif;
+}
+.menu {
+  z-index: 1;
+  position: fixed;
+  padding: 60px 0;
+  left: 0;
+  right: 0;
+}
+.menu__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 65px;
+}
+.top__layers {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@supports (animation-timeline: scroll()) {
+  .top {
+    height: 300vh;
+  }
+  .top__layers {
+    animation-timing-function: linear;
+    animation-timeline: scroll();
+    animation-fill-mode: both;
+    animation-range: 0 300vh;
+  }
+}
+.top__text {
+  font-family: "Gravitas One", serif;
+  position: relative;
+  z-index: 1;
+  animation-name: text;
+  opacity: 0;
+  animation-timing-function: linear;
+  animation-timeline: scroll();
+  animation-fill-mode: both;
+  animation-range: 100vh 200vh;
+}
+
+@keyframes text {
+  to {
+    opacity: 1;
+  }
+}
+.top__title {
+  text-transform: uppercase;
+  font-size: 120px;
+  margin: 0;
+}
+.top__description {
+  font-size: 30px;
+  margin: 0;
+}
+
+.top__layers--5 {
+  animation-name: top-layer-5;
+}
+@keyframes top-layer-5 {
+  to {
+    scale: 1.25;
+  }
+}
+.top__layers--4 {
+  animation-name: top-layer-4;
+}
+@keyframes top-layer-4 {
+  to {
+    scale: 1.35;
+  }
+}
+.top__layers--3 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  animation-name: top-layer-3;
+}
+@keyframes top-layer-3 {
+  to {
+    scale: 1.2;
+  }
+}
+.top__layers--2 {
+  animation-name: top-layer-2;
+}
+@keyframes top-layer-2 {
+  to {
+    scale: 2.5;
+  }
+}
+.top__layers--1 {
+  animation-name: top-layer-1;
+}
+@keyframes top-layer-1 {
+  to {
+    scale: 5;
+  }
+}
+
+.arrows__box {
+  border: 1px solid #fff;
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+}
+
+.arrows {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  margin: 40% auto 0;
+}
+.arrows::after,
+.arrows::before {
+  content: "";
+  position: absolute;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  width: 100%;
+  height: 100%;
+  animation: arrow 3s linear infinite;
+  opacity: 0;
+}
+.arrows::after {
+  animation: arrow 3s linear infinite 1.5s;
+}
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    transform: translate(0, -10px) rotate(-45deg);
+  }
+  10%,
+  90% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, 0px) rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 10px) rotate(-45deg);
+  }
+}

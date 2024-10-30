@@ -1,0 +1,16 @@
+{
+  "name": "3d_scroling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://VasylMymriak.github.io",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "VasylMymriak",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
+  }
+}
